@@ -43,7 +43,7 @@ RUN curl -fsSL -o ~/miniforge3.sh -O  "https://github.com/conda-forge/miniforge/
 ## Python Base #################################################################
 FROM base as python-base
 
-COPY --from=python-install --link /opt/vllm /opt/vllm
+COPY --from=python-install /opt/vllm /opt/vllm
 
 ENV PATH=/opt/vllm/bin/:$PATH
 
